@@ -1,2 +1,4 @@
-def pilling(m,n):
-    return (m*n)//2
+board = input()
+rboard = board.split()
+m,n = rboard
+print((int(m)*int(n))//2)
