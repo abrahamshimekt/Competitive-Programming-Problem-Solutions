@@ -9,3 +9,4 @@ def countSwaps(a):
     print("Array is sorted in %d swaps." %swapc)
     print("First Element: %d"  %a[0])
     print("Last Element: %d"  %a[-1])
+countSwaps([3,3,4,52,4])
