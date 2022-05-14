@@ -3,8 +3,7 @@ class Solution:
         if num == 0:
             return 0
         elif num >0:
-            nums_s = str(num)
-            num_list = [x for x in nums_s]
+            num_list = [x for x in str(num)]
             num_sorted = sorted(num_list)
             if num_sorted[0] =="0":
                 for i in range(1,len(num_sorted)):
@@ -13,9 +12,8 @@ class Solution:
                         return int("".join(num_sorted))
             else:
                  return int("".join(num_sorted))
-        else:
-            nums_s = str(-1*num)
-            num_list = [x for x in nums_s]
+        else: 
+            num_list = [x for x in str(-1*num)]
             num_sorted = sorted(num_list,reverse= True)
             if num_sorted[0] =="0":
                  for i in range(1,len(num_sorted)):
