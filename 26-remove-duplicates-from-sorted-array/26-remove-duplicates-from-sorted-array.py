@@ -7,7 +7,6 @@ class Solution:
             elif nums[j] > nums[i]:
                 nums[i +1] , nums[j] =  nums[j] , nums[i +1]
                 i +=1
-            else:
                 j +=1
         return i + 1
                 
