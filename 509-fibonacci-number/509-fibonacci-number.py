@@ -1,13 +1,12 @@
 class Solution:
     def fib(self, n: int) -> int:
-        if n ==0:
-            return 0
-        elif n==1:
-            return 1
-        else:
-            fib = [0]*(n+1)
-            fib[0] = 0
-            fib[1] = 1
-            for i in range(2, n+1):
-                fib[i] = fib[i-1] + fib[i-2]
-            return fib[n]
+        dp ={}
+        def helper(n):
+            if n==0 or n==1:
+                return n
+            if n in dp:
+                return dp[n]
+            x = helper(n-1) + helper(n-2)
+            dp[n] =x
+            return x
+        return helper(n)
