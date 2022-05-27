@@ -8,6 +8,5 @@ class Solution:
             if num % i ==0:
                 sum_ += (i + num/i)
             i +=1
-        
         return sum_ ==num
             
