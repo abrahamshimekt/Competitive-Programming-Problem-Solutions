@@ -6,13 +6,14 @@ class Solution:
         # elif n < 1 and n>0:
         #     return False
         # return self.isPowerOfTwo(n/2)
-        if n==0:
-            return False
-        while n !=1:
-            if n %2 != 0:
-                return False
-            n = n//2
-        return True
+        return n and (not(n &(n-1)))
+        # if n==0:
+        #     return False
+        # while n !=1:
+        #     if n %2 != 0:
+        #         return False
+        #     n = n//2
+        # return True
         # root =str(math.log(n,2))
         # after_decimal = ""
         # for i in range(len(root)):
