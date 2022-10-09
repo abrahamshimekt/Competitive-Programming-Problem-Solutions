@@ -7,7 +7,5 @@ class Solution:
                 even.append(nums[i])
             else:
                 odd.append(nums[i])
-        for num in odd:
-            even.append(num)
-        return even
+        return even + odd
         
