@@ -3,13 +3,10 @@ class Solution:
         stack = []
         i = 0
         while i < len(s):
-            while stack and (abs(ord(stack[-1]) - ord(s[i])) == 32 or abs(ord(s[i]) - ord(stack[-1])) == 32):
+            if stack and abs(ord(stack[-1])-ord(s[i])) == 32:
                 stack.pop()
-                i += 1
-                if i == len(s):
-                    break
+                i +=1
             else:
-                if i < len(s):
-                    stack.append(s[i])
-                i += 1
+                stack.append(s[i])
+                i +=1
         return "".join(stack)
