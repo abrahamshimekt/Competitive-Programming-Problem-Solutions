@@ -1,15 +1,15 @@
 class Solution:
     def finalPrices(self, prices: List[int]) -> List[int]:
         n = len(prices)
-        answers = []
-        for i in range(n-1):
-            found = False
-            for j in range(i +1,n):
-                if prices[i] >= prices[j]:
-                    found = True
-                    answers.append(prices[i]-prices[j])
-                    break
-            if not found:
-                answers.append(prices[i])
-        answers.append(prices[-1])
+        answers = [0] * n
+        stack = []
+        i = 0
+        while i < n:
+            while stack and stack[-1][0] >= prices[i]:
+                price, indx = stack.pop()
+                answers[indx] = price - prices[i]
+            stack.append([prices[i], i])
+            i += 1
+        for remain in stack:
+            answers[remain[1]] = remain[0]
         return answers
