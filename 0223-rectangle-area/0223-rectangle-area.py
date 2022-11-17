@@ -6,9 +6,9 @@ class Solution:
         yRange2 = [by1,by2]
         intersectionXRange = [max(xRange1[0],xRange2[0]),min(xRange1[1],xRange2[1])]
         intersectionYRange = [max(yRange1[0],yRange2[0]),min(yRange1[1],yRange2[1])]
-        rect1Area = abs(ax2-ax1)* abs(ay2-ay1)
-        rect2Area = abs(bx2-bx1)*abs(by2-by1)
-        intersectionArea = abs(intersectionXRange[1]-intersectionXRange[0])*abs(intersectionYRange[1]-intersectionYRange[0])
+        rect1Area = (ax2-ax1)* (ay2-ay1)
+        rect2Area = (bx2-bx1)*(by2-by1)
+        intersectionArea = (intersectionXRange[1]-intersectionXRange[0])*(intersectionYRange[1]-intersectionYRange[0])
         if intersectionXRange[1]-intersectionXRange[0] <=0:                 
             return  rect1Area + rect2Area
         elif intersectionYRange[1]-intersectionYRange[0] <= 0:
