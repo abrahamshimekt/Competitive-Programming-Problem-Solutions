@@ -1,9 +1,9 @@
 class Solution:
     def computeArea(self, ax1: int, ay1: int, ax2: int, ay2: int, bx1: int, by1: int, bx2: int, by2: int) -> int:
-        xRange1 = sorted([ax1,ax2])
-        yRange1 = sorted([ay1,ay2])
-        xRange2 = sorted([bx1,bx2])
-        yRange2 = sorted([by1,by2])
+        xRange1 = [ax1,ax2]
+        yRange1 = [ay1,ay2]
+        xRange2 = [bx1,bx2]
+        yRange2 = [by1,by2]
         intersectionXRange = [max(xRange1[0],xRange2[0]),min(xRange1[1],xRange2[1])]
         intersectionYRange = [max(yRange1[0],yRange2[0]),min(yRange1[1],yRange2[1])]
         rect1Area = abs(ax2-ax1)* abs(ay2-ay1)
