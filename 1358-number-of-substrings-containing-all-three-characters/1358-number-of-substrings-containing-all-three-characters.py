@@ -1,12 +1,5 @@
 class Solution:
     def numberOfSubstrings(self, s: str) -> int:  
-        """ "ababbbc"
-        i = 3
-        j = 7
-        count = 3
-        seen = {a:0,b:3,c:1}
-        
-        """
         seen = {"a":0,"b":0,"c":0}
         i = j = 0
         count = 0
