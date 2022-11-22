@@ -14,6 +14,6 @@ class Solution:
                     seen[s[j]] +=1
                     j +=1
                 else:
-                    i +=1
+                    break
         return count
             
