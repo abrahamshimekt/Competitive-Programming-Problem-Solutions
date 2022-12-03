@@ -2,8 +2,7 @@ class Solution:
     def mySqrt(self, x: int) -> int:
         if x == 0 or x ==1:
             return x
-        half = x//2
-        for i in range(half+1):
+        for i in range(x):
             if i * i == x:
                 return i
             elif i*i > x:
