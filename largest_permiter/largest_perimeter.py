@@ -1,4 +1,4 @@
- def largestPerimeter(self, nums: List[int]) -> int:
+def largestPerimeter(self, nums: List[int]) -> int:
         nums.sort()
         max_perimeter  = 0
         i = 0
