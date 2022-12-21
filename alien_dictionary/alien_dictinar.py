@@ -1,4 +1,4 @@
- def isAlienSorted(self, words: List[str], order: str) -> bool:
+def isAlienSorted(self, words: List[str], order: str) -> bool:
         alphabets = {}
         for index,ch in enumerate(order):
             alphabets[ch] = index
