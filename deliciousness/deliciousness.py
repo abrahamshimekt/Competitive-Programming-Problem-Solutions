@@ -1,8 +1,10 @@
 def countPairs(self, deliciousness: List[int]) -> int:
+        # storing power of two numbers in dictionary
         powers_of_2 = {}
         for power in range(0,22):
             powers_of_2[pow(2,power)]= 1
 
+        # storing each meal with its frequency
         d_freq = {}
         for meal in deliciousness:
             if meal not in d_freq:
@@ -14,6 +16,8 @@ def countPairs(self, deliciousness: List[int]) -> int:
         pairs = 0
         lookup = {}
         
+        # do combination for meals that are the same type and are sum up to power of two
+        # multiply the frequecy of meals that are different type and sum up to power of two
         for meal_ in d_freq:
             for power_of_2 in powers_of_2:
                 if power_of_2 -meal_ in d_freq and meal_ ==power_of_2 -meal_:
