@@ -1,4 +1,5 @@
 def removeComments(self, source: List[str]) -> List[str]:
+    
         is_open = False
         code = []
         curr_code = ''
