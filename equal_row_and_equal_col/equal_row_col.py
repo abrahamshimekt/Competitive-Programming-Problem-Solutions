@@ -5,16 +5,18 @@ def equalPairs(self, grid: List[List[int]]) -> int:
         size = len(grid)
 
          # count the rows similar
+         
         for row in range(size):
 
             curr_row =' '.join([str(num) for num in grid[row]])
-            
+
             if curr_row not in row_counts:
                 row_counts[curr_row] = 1
             else:
                  row_counts[curr_row] += 1
 
          # count cols similar
+
         for col_ in range(size):
             curr_col = []
             for row_ in range(size):

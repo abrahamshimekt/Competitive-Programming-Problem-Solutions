@@ -12,6 +12,7 @@ def equalPairs(self, grid: List[List[int]]) -> int:
             for col in range(size):
 
                 for index in range(size):
+                    
                     # check the ith element of the row and the column are equal or not
                     if curr_row[index] != grid[index][col]:
                         break
