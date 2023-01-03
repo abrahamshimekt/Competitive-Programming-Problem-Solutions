@@ -8,6 +8,7 @@ def equalPairs(self, grid: List[List[int]]) -> int:
         for row in range(size):
 
             curr_row =' '.join([str(num) for num in grid[row]])
+            
             if curr_row not in row_counts:
                 row_counts[curr_row] = 1
             else:
@@ -33,5 +34,5 @@ def equalPairs(self, grid: List[List[int]]) -> int:
         for row_count in row_counts:
             if row_count in col_counts:
                 pairs += row_counts[row_count]*col_counts[row_count]
-                
+
         return pairs
