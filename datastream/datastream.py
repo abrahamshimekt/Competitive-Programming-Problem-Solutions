@@ -4,9 +4,7 @@ class DataStream:
         self.value = value
         self.k = k
         self.value_count = 0
-       
         
-
     def consec(self, num: int) -> bool:
         if num == self.value:
             self.value_count +=1
