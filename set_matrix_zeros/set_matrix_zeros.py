@@ -28,17 +28,23 @@ class Solution:
         n = len(matrix)
         m = len(matrix[0])
         zeros_position = {0:[]}
+        zeros_count = 0
 
         for row in range(n):
             for col in range(m):
                 if matrix[row][col] == 0:
                    zeros_position[0].append((row,col))
-   
-        for row_ , col_ in zeros_position[0]:
+                   zeros_count +=1
 
-            self.move_up(matrix,row_,col_)
-            self.move_down(matrix,row_,col_)
-            self.move_left(matrix,row_,col_)
-            self.move_right(matrix,row_,col_)
+        if zeros_count == n*m:
+            return matrix
             
-        return matrix
+        else:
+            for row_ , col_ in zeros_position[0]:
+
+                self.move_up(matrix,row_,col_)
+                self.move_down(matrix,row_,col_)
+                self.move_left(matrix,row_,col_)
+                self.move_right(matrix,row_,col_)
+                
+            return matrix
