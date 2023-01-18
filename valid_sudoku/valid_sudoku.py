@@ -45,3 +45,5 @@ class Solution:
                     if not self.valid_3by3(board,row,col):
                         return False
             return True
+
+
