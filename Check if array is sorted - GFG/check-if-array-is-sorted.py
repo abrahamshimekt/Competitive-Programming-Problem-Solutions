@@ -2,9 +2,18 @@
 
 class Solution:
     def arraySortedOrNot(self, arr, n):
-        for index in range(n-1):
-            if arr[index]> arr[index+1]:
+        
+        # for index in range(n-1):
+        #     if arr[index]> arr[index+1]:
+        #         return 0
+        # return 1
+        right = 1
+        left = 0
+        while right < n:
+            if arr[right] < arr[left]:
                 return 0
+            right +=1
+            left +=1
         return 1
 
 
