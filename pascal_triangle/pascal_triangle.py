@@ -1,4 +1,5 @@
 class Solution:
+    
     @lru_cache
     def pascal(self,row,col):
         if row == col:
@@ -6,6 +7,7 @@ class Solution:
         elif col == 1:
             return 1
         return self.pascal(row-1,col-1) + self.pascal(row-1,col)
+    
     def getRow(self, rowIndex: int) -> List[int]:
         pascal_row = []
         for index in range(1,rowIndex+2):
