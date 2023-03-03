@@ -14,7 +14,7 @@ import sys
 #  1. STRING n
 #  2. INTEGER k
 #
-def 
+
 def superDigit(n, k):
     
     while n > 9:
