@@ -1,3 +1,6 @@
+from functools import lru_cache
+
+
 class Solution:
     def invert(self,s):
 
