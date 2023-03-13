@@ -1,19 +1,38 @@
 class Solution:
     def numberOfSubarrays(self, nums: List[int], k: int) -> int:
-        remainders = []
-        rem = 0
-        num_subarray = 0
-        for num in nums:
-            rem += num % 2
-            remainders.append(rem)
-        prefix = {0: 1}
-        for remainder in remainders:
-            if remainder - k in prefix:
-                num_subarray += prefix[remainder - k]
-            if remainder not in prefix:
-                prefix[remainder] =1
-            else:
-                prefix[remainder] += 1
-        return num_subarray
+        # if we have k odd numbers, the sum of their remainder after devide by
+        # two is k
+        # so the problem can be converted to the number of subarrays whose 
+        # remainder sum up to k thus because the remainders are either 0 or 1
+        # so only the ones will contribute to the sum up to k
+    
+        N = len(nums)
 
+        remainder_prefix = []
+        
+        remainder = 0
+
+        for num in nums:
+
+            remainder += num%2
+
+            remainder_prefix.append(remainder)
+
+        remainders = defaultdict(int,{0:1})
+
+        num_subarrays = 0
+
+        for index in range(N):
+
+            if remainder_prefix[index]-k in remainders:
                 
+                num_subarrays += remainders[remainder_prefix[index]-k]
+
+            remainders[remainder_prefix[index]] +=1
+
+        return num_subarrays
+
+
+
+
+        
