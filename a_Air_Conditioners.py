@@ -1,0 +1,5 @@
+T = int(input())
+input()
+n,k = map(int,input().split())
+pos = list(map(int,input().split()))
+temp = list(map(int,input().split()))

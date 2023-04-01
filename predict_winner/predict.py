@@ -1,5 +1,8 @@
 class Solution:
     def winner(self,nums,left,right,turn):
+        # the idea of solving this problem related with that the minmax algorithm 
+        # we assum the first player as a maximizer and the second player as  a mininimaizer 
+        # beacuase we want that he first player to win the game
         if left > right:
             return 0
         if turn :
