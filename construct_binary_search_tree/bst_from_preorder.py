@@ -6,11 +6,13 @@
 #         self.right = right
 class Solution:
     def bstFromPreorder(self, preorder: List[int]) -> Optional[TreeNode]:
+        
         root = TreeNode(preorder[0])
         stack = [root]
         
         
         for index  in range(1,len(preorder)):
+
             if not stack:
 
                 stack.append(TreeNode(preorder[index]))
@@ -21,6 +23,7 @@ class Solution:
                 
                 stack.append(stack[-1].left)
             else:
+
                 parent = None
                 while stack and stack[-1].val < preorder[index]:
                     parent = stack.pop()
