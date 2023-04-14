@@ -6,7 +6,7 @@
 #         self.right = right
 class Solution:
     def bstFromPreorder(self, preorder: List[int]) -> Optional[TreeNode]:
-        
+
         root = TreeNode(preorder[0])
         stack = [root]
         
@@ -30,6 +30,7 @@ class Solution:
 
                
                 parent.right = TreeNode(preorder[index])
+                
                 stack.append(parent.right)
             
         return root
