@@ -8,6 +8,7 @@ class Solution:
     def bstFromPreorder(self, preorder: List[int]) -> Optional[TreeNode]:
 
         root = TreeNode(preorder[0])
+        
         stack = [root]
         
         
@@ -25,6 +26,7 @@ class Solution:
             else:
 
                 parent = None
+
                 while stack and stack[-1].val < preorder[index]:
                     parent = stack.pop()
 
