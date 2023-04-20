@@ -1,0 +1,53 @@
+class Solution:
+    def dfs(self,node):
+        stack = [node]
+        self.visited.add(node)
+        while stack:
+            currNode = stack.pop()
+            
+            for neighbor in self.adjancecyList[currNode]:
+
+                if neighbor not in self.visited:
+                    stack.append(neighbor)
+                    self.visited.add(neighbor)
+                
+        self.provinces +=1
+
+    def findCircleNum(self, isConnected: List[List[int]]) -> int:
+
+        N = len(isConnected)
+        M = len(isConnected[0])
+
+        adjancecyList = defaultdict(set)
+
+        for row in range(N):
+
+            hasNeighbor = False
+
+            for col in range(M):
+
+                if isConnected[row][col] == 1 and row != col:
+
+                    adjancecyList[row+1].add(col+1)
+                    hasNeighbor = True
+
+            if not hasNeighbor:
+                adjancecyList[row+1] = {}
+       
+        self.provinces = 0
+        
+        self.adjancecyList = adjancecyList
+
+        self.visited = set()
+
+        for city in adjancecyList:
+            if city not in self.visited:
+                
+                self.dfs(city)
+        return self.provinces
+
+
+
+       
+
+        
