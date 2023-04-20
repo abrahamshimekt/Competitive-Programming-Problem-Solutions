@@ -1,0 +1,19 @@
+class Solution:
+    def hasGroupsSizeX(self, deck: List[int]) -> bool:
+    
+        frequency = Counter(deck)
+        
+        greatest_common_factor = 0
+        
+        for freq in frequency.values():
+        
+            greatest_common_factor = math.gcd(greatest_common_factor,freq)
+            
+            if greatest_common_factor == 1:
+            
+                return False
+                
+        return greatest_common_factor > 1
+        
+
+        
