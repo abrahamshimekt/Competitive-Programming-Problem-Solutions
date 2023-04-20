@@ -1,0 +1,32 @@
+class Solution:
+    def dfs(self,row,col):
+        stack = [(row,col)]
+        self.visited.add((row,col))
+        currArea = 1
+        while stack:
+            currRow,currCol  = stack.pop()
+            for direction in self.directions:
+                r,c = direction
+                if 0<= currRow + r <self.N and 0<= currCol + c < self.M:
+                    if self.grid[currRow+r][currCol+c] == 1 and (currRow+r,currCol+c) not in self.visited:
+                        stack.append((currRow+r,currCol+c))
+                        currArea +=1
+                        self.visited.add((currRow+r,currCol+c))
+        self.maxArea = max(self.maxArea,currArea)
+
+
+                
+
+    def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
+        self.N = len(grid) 
+        self.M = len(grid[0])
+        self.directions = [(0,-1),(0,1),(-1,0),(1,0)]
+        self.maxArea = 0
+        self.grid = grid
+        self.visited = set()
+        for row in range(self.N):
+            for col in range(self.M):
+                if self.grid[row][col] == 1 and (row,col) not in self.visited:
+                    self.dfs(row,col)
+
+        return self.maxArea
