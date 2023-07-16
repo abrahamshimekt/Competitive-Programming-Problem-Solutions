@@ -1,19 +1,15 @@
 #User function Template for python3
-
+[]
 class Solution:
     def arraySortedOrNot(self, arr, n):
-        
-        # for index in range(n-1):
-        #     if arr[index]> arr[index+1]:
-        #         return 0
-        # return 1
-        right = 1
         left = 0
+        right = 1
         while right < n:
-            if arr[right] < arr[left]:
+            if arr[left] > arr[right]:
                 return 0
-            right +=1
-            left +=1
+            else:
+                left +=1
+                right +=1
         return 1
 
 
