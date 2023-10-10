@@ -1,0 +1,68 @@
+# cpp
+#include <iostream>
+#include <vector>
+#include <map>
+
+using namespace std;
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+
+    map<int, int> distances;
+    for (int node = 1; node <= n; node++) {
+        distances[node] = 30000;
+    }
+
+    vector<tuple<int, int, int>> edges;
+    for (int i = 0; i < m; i++) {
+        int u, v, w;
+        cin >> u >> v >> w;
+        edges.push_back(make_tuple(u, v, w));
+    }
+
+    distances[1] = 0;
+    for (int i = 0; i < n; i++) {
+        for (const auto& edge : edges) {
+            int u, v, w;
+            tie(u, v, w) = edge;
+            if (distances[u] != 30000 && distances[u] + w < distances[v]) {
+                distances[v] = distances[u] + w;
+            }
+        }
+    }
+
+    vector<int> answer;
+    for (const auto& node : distances) {
+        answer.push_back(node.second);
+    }
+
+    for (int ele : answer) {
+        cout << ele << ' ';
+    }
+
+    return 0;
+}
+
+
+# python
+n, m = map(int, input().split())
+distances = {node: 30000 for node in range(1, n + 1)}
+
+edges = []
+for _ in range(m):
+    u, v, w = map(int, input().split())
+    edges.append((u, v, w))
+
+
+distances[1] = 0
+for _ in range(n-1):
+    for u, v, w in edges:
+        if distances[u] != 30000 and distances[u] + w < distances[v]:
+            distances[v] = distances[u] + w
+
+answer = []
+for node in distances:
+    answer.append(distances[node])
+
+print(*answer)
